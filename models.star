@@ -7,5 +7,6 @@ models = {
     "stablediffusion": "https://github.com/go-skynet/model-gallery/blob/main/stablediffusion.yaml",
 }
 
+
 def supported_models():
     return ", ".join(models.keys())
