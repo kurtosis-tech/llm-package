@@ -22,7 +22,7 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
         "We will be downloading the images so the startup speed will depeend on your internet connection"
     )
 
-    preloaded_models = [{"url": model_url}]
+    preloaded_models = [{"url": model_url, "name": model}]
 
     local_ai_service = plan.add_service(
         name=LOCAL_AI_SERVICE,
