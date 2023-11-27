@@ -33,7 +33,7 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
                     number=HTTP_PORT_NUM, transport_protocol="TCP", wait=None
                 )
             },
-            env_vars={"PRELOAD_MODELS": str(preloaded_models)},
+            env_vars={"PRELOAD_MODELS": str(preloaded_models), "DEBUG": "true"},
             ready_conditions=ReadyCondition(
                 recipe=GetHttpRequestRecipe(
                     port_id="http",
