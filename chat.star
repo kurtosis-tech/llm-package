@@ -11,5 +11,6 @@ def start_chat(plan, local_ai_url):
                 "OPENAI_API_KEY": DUMMY_OPEN_AI_KEY,
                 "OPENAI_API_HOST": local_ai_url,
             },
+            ports={"http": PortSpec(number=3000, transport_protocol="TCP")},
         ),
     )
