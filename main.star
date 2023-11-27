@@ -34,17 +34,17 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
                 )
             },
             env_vars={"PRELOAD_MODELS": str(preloaded_models)},
-        ),
-        ready_conditions=ReadyCondition(
-            recipe=GetHttpRequestRecipe(
-                port_id="http",
-                endpoint="readyz",
+            ready_conditions=ReadyCondition(
+                recipe=GetHttpRequestRecipe(
+                    port_id="http",
+                    endpoint="readyz",
+                ),
+                field="code",
+                assertion="==",
+                target_value=200,
+                interval="1m",
+                timeout="5m",
             ),
-            field="code",
-            assertion="==",
-            target_value=200,
-            interval="1m",
-            timeout="5m",
         ),
     )
 
