@@ -1,6 +1,6 @@
-name: "github.com/kurtosis-tech/local-llm-package"
+name: "github.com/kurtosis-tech/llm-package"
 description: |
-  Local-LLM
-  =========
+  LLM Package
+  ===========
 
   This Kurtosis package allows you to spin up almost any LLM locally!
