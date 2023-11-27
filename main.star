@@ -40,6 +40,6 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
     local_ai_uri = "http://{0}:{1}".format(LOCAL_AI_SERVICE, HTTP_PORT_NUM)
 
     if chat_enabled:
-        chat.start_chat(plan, local_ai_uri)
+        chat.start_chat(plan, local_ai_uri, model)
 
     plan.print("Local AI is running with model")
