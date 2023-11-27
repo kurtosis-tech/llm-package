@@ -37,7 +37,7 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
             ready_conditions=ReadyCondition(
                 recipe=GetHttpRequestRecipe(
                     port_id="http",
-                    endpoint="readyz",
+                    endpoint="/readyz",
                 ),
                 field="code",
                 assertion="==",
