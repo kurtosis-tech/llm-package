@@ -2,7 +2,7 @@ CHATBOT_UI_IMAGE = "ghcr.io/mckaywrigley/chatbot-ui:main"
 DUMMY_OPEN_AI_KEY = "sk-XXXXXXXXXXXXXXXXXXXX"
 
 
-def start_chat(plan, local_ai_url, model):
+def start_chat(plan, local_ai_url):
     plan.add_service(
         name="chat",
         config=ServiceConfig(
@@ -10,7 +10,6 @@ def start_chat(plan, local_ai_url, model):
             env_vars={
                 "OPENAI_API_KEY": DUMMY_OPEN_AI_KEY,
                 "OPENAI_API_HOST": local_ai_url,
-                "DEFAULT_MODEL": model,
             },
             ports={"http": PortSpec(number=3000, transport_protocol="TCP")},
         ),
