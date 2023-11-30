@@ -19,7 +19,7 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
     model_url = models.models[model]
 
     plan.print(
-        "We will be downloading the images so the startup speed will depeend on your internet connection"
+        "We will be downloading the images so the startup speed will depend on your internet connection"
     )
 
     preloaded_models = [{"url": model_url, "name": model}]
