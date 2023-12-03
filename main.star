@@ -1,7 +1,7 @@
 models = import_module("./models.star")
 chat = import_module("./chat.star")
 
-LOCAL_AI_IMAGE = "quay.io/go-skynet/local-ai:v1.40"
+LOCAL_AI_IMAGE = "h4ck3rk3y/local-ai"
 LOCAL_AI_SERVICE = "local-ai"
 DEFAULT_MODEL = "gpt-3.5-turbo"
 
@@ -43,7 +43,8 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
                 assertion="==",
                 target_value=200,
                 interval="30s",
-                timeout="10m",
+                # to account for slow internet connections
+                timeout="30m",
             ),
         ),
     )
