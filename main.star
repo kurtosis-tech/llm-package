@@ -1,7 +1,8 @@
 models = import_module("./models.star")
 chat = import_module("./chat.star")
 
-LOCAL_AI_IMAGE = "h4ck3rk3y/local-ai:arm64"
+# using h4ck3rk3y as it has both arm64 & amd64
+LOCAL_AI_IMAGE = "h4ck3rk3y/local-ai:latest"
 LOCAL_AI_SERVICE = "local-ai"
 DEFAULT_MODEL = "gpt-3.5-turbo"
 
