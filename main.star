@@ -5,6 +5,7 @@ chat = import_module("./chat.star")
 LOCAL_AI_IMAGE = "h4ck3rk3y/local-ai:latest"
 LOCAL_AI_SERVICE = "local-ai"
 DEFAULT_MODEL = "gpt-3.5-turbo"
+CHATBOT_FRIENDLY_MODEL = "gpt-3.5-turbo"
 
 HTTP_PORT_NUM = 8080
 
@@ -14,7 +15,8 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
 
     Args:
         model (string): The model to use; defaults to gpt-3.5-turbo
-        chat_enabled (bool): An optional Chat application to use the model with; defaults to true
+        chat_enabled (bool): An optional Chat application to use the model with; defaults to True. Enabling chat mode
+        renames the model to gpt-3.5-turbo as the ChatBot UI application only works with OpenAI named models
     """
 
     model_url = models.models[model]
@@ -24,6 +26,9 @@ def run(plan, model=DEFAULT_MODEL, chat_enabled=True):
     )
 
     preloaded_models = [{"url": model_url, "name": model}]
+
+    if chat_enabled:
+        preloaded_models[0]["name"] = CHATBOT_FRIENDLY_MODEL
 
     local_ai_service = plan.add_service(
         name=LOCAL_AI_SERVICE,
