@@ -44,7 +44,7 @@ kurtosis run github.com/kurtosis-tech/llm-package '{"chat_enabled": false}'
 
 We use [`LocalAI`](https://github.com/mudler/LocalAI) underneath which gives you a JSON-RPC API endpoint which resembles the OpenAI platform. After you run the command; you should be able to see what local port `8080` of the `local-ai` service maps to.
 
-This means that you can use `llangchain`, `pdfGPT` or any other libraries and platforms that would use OpenAI models by using the `JSON-RPC` endpoint. Also, as its completely containerized - you can have multiple models running in parallel.
+This means that you can use `langchain`, `pdfGPT` or any other libraries and platforms that would use OpenAI models by using the `JSON-RPC` endpoint. Also, as its completely containerized - you can have multiple models running in parallel.
 
 ## Issues and Feature Requests
 
